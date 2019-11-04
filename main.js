@@ -106,14 +106,17 @@ function renderRecord(doc) {
 db.collection("records").orderBy("date").onSnapshot(function(snapshot) {
   let changes = snapshot.docChanges();
   let total = parseInt($("#total").text());
+  let type = $(".add-btn").attr("data-user");
   changes.forEach(function(change) {
-    if (change.type == "added") {
-      renderRecord(change.doc);
-      total += change.doc.data().amount;
-    } else if (change.type == "removed") {
-      $(`.record[data-id=${change.doc.id}]`).remove();
-      total -= change.doc.data().amount;
+    if (type == "all" || type == change.doc.data().name) {
+      if (change.type == "added") {
+        renderRecord(change.doc);
+        total += change.doc.data().amount;
+      } else if (change.type == "removed") {
+        $(`.record[data-id=${change.doc.id}]`).remove();
+        total -= change.doc.data().amount;
+      }
+      $("#total").text(total);
     }
-    $("#total").text(total);
   });
 });
