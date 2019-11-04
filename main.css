@@ -12,18 +12,14 @@
   background: none;
 }
 
-body {
+.wrapper {
   width: 100vw;
-  height: 100vh;
+  height: 100vh !important;
   background-color: var(--blue);
   color: var(--dark-blue);
   font-family: Josefin Sans, Noto Sans TC, sans-seri;
   display: flex;
   align-items: center;
-}
-
-body.swal2-height-auto {
-  height: -webkit-fill-available !important;
 }
 
 .card {
