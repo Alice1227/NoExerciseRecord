@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>NoExerciseRecord</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans|Noto+Sans+TC:300">
+  <link rel=stylesheet type="text/css" href="main.css?v=20191104">
+
+  <!-- JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div>
+      <div class="row">
+        <div class="col-12 col-md-6 offset-md-3 col-xl-4 offset-xl-4">
+          <div class="card">
+            <h5 class="text-center"><b>No Exercise Record</b></h5>
+            <div class="select-tabs d-flex align-items-center justify-content-between text-center">
+              <div class="selected" id="show-all-btn">All</div>
+              <div id="show-eating-btn">Eating</div>
+              <div id="show-lucky-btn">Lucky</div>
+            </div>
+            <div class="select-section">
+              <div id="record-list"></div>
+              <div class="row">
+                <div class="col-9 show-total-text">Total Amount : <span id="total">0</span></div>
+                <div class="col-3 add-btn text-center" data-user="all"><i class="fas fa-plus"></i></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyB8mXu15Db9e87Yg0uxCFsd3YA3HWDIgd8",
+      authDomain: "no-exercise-record.firebaseapp.com",
+      databaseURL: "https://no-exercise-record.firebaseio.com",
+      projectId: "no-exercise-record",
+      storageBucket: "no-exercise-record.appspot.com",
+      messagingSenderId: "754249667939",
+      appId: "1:754249667939:web:00d0eff11c4a307052af56"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+  </script>
+  <script type="text/javascript" src="main.js?v=20191104"></script>
+</body>
+
+</html>
